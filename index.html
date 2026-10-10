@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Reservas Riviera Maya - Reto</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="app.js" defer></script>
+</head>
+<body>
+  <header class="encabezado">
+    <h1>Reservas Riviera Maya</h1>
+    <p>Selecciona y calcula tu experiencia turística</p>
+  </header>
+
+  <main class="contenedor">
+    <!-- Contenedor para mensajes en pantalla (sin alert) -->
+    <div id="mensajeNotificacion" class="mensaje-alerta oculto" role="alert"></div>
+
+    <section class="controles" aria-label="Controles del catálogo">
+      <input id="buscador" type="search" placeholder="Buscar experiencia...">
+      
+      <select id="filtroCategoria">
+        <option value="todas">Todas las categorías</option>
+        <option value="naturaleza">Naturaleza</option>
+        <option value="cultura">Cultura</option>
+        <option value="aventura">Aventura</option>
+        <option value="gastronomia">Gastronomía</option>
+        <option value="relajacion">Relajación</option>
+      </select>
+
+      <select id="ordenPrecio">
+        <option value="normal">Orden original</option>
+        <option value="ascendente">Menor precio</option>
+        <option value="descendente">Mayor precio</option>
+      </select>
+
+      <div class="control-precio">
+        <label for="filtroPrecioMax">Precio máx: $<span id="valorPrecioMax">1000</span></label>
+        <input id="filtroPrecioMax" type="range" min="300" max="1000" step="50" value="1000">
+      </div>
+    </section>
+
+    <p id="estado" class="estado">Cargando experiencias...</p>
+
+    <section id="catalogo" class="catalogo"></section>
+
+    <section class="resumen">
+      <div class="resumen-header">
+        <h2>Mi reservación</h2>
+        <button id="btnVaciar" class="btn-vaciar oculto">Vaciar reservación</button>
+      </div>
+
+      <div id="listaReservas">
+        <p>No hay experiencias seleccionadas.</p>
+      </div>
+
+      <div class="resumen-totales">
+        <p class="total-personas">Total personas: <strong id="totalPersonas">0</strong></p>
+        <p class="total">Total a pagar: <span id="total">$0 MXN</span></p>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>Proyecto académico de frontend</p>
+  </footer>
+</body>
+</html>
